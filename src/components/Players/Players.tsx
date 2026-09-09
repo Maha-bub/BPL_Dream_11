@@ -1,10 +1,13 @@
+import { use } from "react";
 import type { IplayerType } from "../PlayersType";
 
-const Players = ({ PlayerDataPromise }: Promise<IplayerType>) => {
-    console.log(PlayerDataPromise)
+const Players = ({ PlayerDataPromise }: Promise<IplayerType[]>) => {
+    const playerData = use(PlayerDataPromise);
+    console.log(playerData)
+
     return (
         <div>
-            Players:{PlayerDataPromise.length}
+            Players:{playerData.length}
         </div>
     );
 };
