@@ -1,0 +1,102 @@
+[
+    {
+        "playerName": "Virat Kohli",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Virat_Kohli_portrait.jpg",
+        "origin": "India",
+        "playerType": "Batsman",
+        "battingStyle": "Right Handed",
+        "bowlingStyle": "Right Arm Medium",
+        "price": 880,
+        "rating": 9.8
+    },
+    {
+        "playerName": "Babar Azam",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Babar_Azam.jpg",
+        "origin": "Pakistan",
+        "playerType": "Batsman",
+        "battingStyle": "Right Handed",
+        "bowlingStyle": "Right Arm Off Break",
+        "price": 600,
+        "rating": 9.6
+    },
+    {
+        "playerName": "Shakib Al Hasan",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakib_al_hasan_3.jpg",
+        "origin": "Bangladesh",
+        "playerType": "All Rounder",
+        "battingStyle": "Left Handed",
+        "bowlingStyle": "Left Arm Orthodox",
+        "price": 150,
+        "rating": 9.5
+    },
+    {
+        "playerName": "Ben Stokes",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_Stokes.jpg",
+        "origin": "England",
+        "playerType": "All Rounder",
+        "battingStyle": "Left Handed",
+        "bowlingStyle": "Right Arm Fast Medium",
+        "price": 450,
+        "rating": 9.4
+    },
+    {
+        "playerName": "Jasprit Bumrah",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Jasprit_Bumrah.jpg",
+        "origin": "India",
+        "playerType": "Bowler",
+        "battingStyle": "Right Handed",
+        "bowlingStyle": "Right Arm Fast",
+        "price": 700,
+        "rating": 9.7
+    },
+    {
+        "playerName": "Rashid Khan",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Rashid_Khan.jpg",
+        "origin": "Afghanistan",
+        "playerType": "Bowler",
+        "battingStyle": "Right Handed",
+        "bowlingStyle": "Right Arm Leg Break",
+        "price": 400,
+        "rating": 9.3
+    },
+    {
+        "playerName": "Joe Root",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Joe_Root.jpg",
+        "origin": "England",
+        "playerType": "Batsman",
+        "battingStyle": "Right Handed",
+        "bowlingStyle": "Right Arm Off Break",
+        "price": 125,
+        "rating": 9.2
+    },
+    {
+        "playerName": "Trent Boult",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Trent_Boult.jpg",
+        "origin": "New Zealand",
+        "playerType": "Bowler",
+        "battingStyle": "Left Handed",
+        "bowlingStyle": "Left Arm Fast Medium",
+        "price": 100,
+        "rating": 9.1
+    },
+    {
+        "playerName": "Andre Russell",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Andre_Russell.jpg",
+        "origin": "West Indies",
+        "playerType": "All Rounder",
+        "battingStyle": "Right Handed",
+        "bowlingStyle": "Right Arm Fast",
+        "price": 130,
+        "rating": 9.4
+    },
+    {
+        "playerName": "Kane Williamson",
+        "playerImg": "https://commons.wikimedia.org/wiki/Special:FilePath/Kane_Williamson.jpg",
+        "origin": "New Zealand",
+        "playerType": "Batsman",
+        "battingStyle": "Right Handed",
+        "bowlingStyle": "Right Arm Off Break",
+        "price": 150,
+        "rating": 9.0
+    }
+]
