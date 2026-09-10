@@ -9,35 +9,98 @@ const PlayerCard = ({ player }: PlayerCardProps) => {
     console.log(player);
 
     return (
-        <div className="card bg-base-100 w-96 shadow-sm">
-            <figure>
+        <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 border border-base-200 overflow-hidden">
+
+            {/* Player Image */}
+            <figure className="h-64 bg-base-200 overflow-hidden">
                 <img
                     src={player.playerImg}
                     alt={player.playerName}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
             </figure>
 
-            <div className="card-body">
-                <h2 className="card-title"><FaUserPlus />
-                    {player.playerName}
-                </h2>
-                <div className="flex justify-between w-full">
-                    <div className="flex gap-1 items-center">
-                        <IoFlagSharp />                        {player.origin}
+            <div className="card-body p-5">
+
+                {/* Player Name */}
+                <div className="flex items-center gap-2">
+                    <FaUserPlus className="text-primary" />
+
+                    <h2 className="card-title text-lg font-bold">
+                        {player.playerName}
+                    </h2>
+                </div>
+
+                {/* Country + Player Type */}
+                <div className="flex justify-between items-center text-sm text-gray-500 mt-1">
+                    <div className="flex items-center gap-1">
+                        <IoFlagSharp className="text-primary" />
+                        <span>{player.origin}</span>
                     </div>
 
-                    <p>
-                        Type: {player.playerType}
-                    </p>
+                    <span className="badge badge-outline">
+                        {player.playerType}
+                    </span>
                 </div>
-                <div className="divider"></div>
 
+                <div className="divider my-2"></div>
 
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">
-                        Buy Now
+                {/* Player Information */}
+                <div className="space-y-3 text-sm">
+
+                    <div className="flex justify-between">
+                        <span className="text-gray-500">
+                            Rating
+                        </span>
+
+                        <span className="font-semibold">
+                            ⭐ {player.rating}
+                        </span>
+                    </div>
+
+                    <div className="flex justify-between">
+                        <span className="text-gray-500">
+                            Batting Style
+                        </span>
+
+                        <span className="font-medium text-right">
+                            {player.battingStyle}
+                        </span>
+                    </div>
+
+                    <div className="flex justify-between">
+                        <span className="text-gray-500">
+                            Bowling Style
+                        </span>
+
+                        <span className="font-medium text-right">
+                            {player.bowlingStyle}
+                        </span>
+                    </div>
+
+                </div>
+
+                <div className="divider my-2"></div>
+
+                {/* Price + Button */}
+                <div className="flex justify-between items-center">
+
+                    <div>
+                        <p className="text-xs text-gray-500">
+                            Player Price
+                        </p>
+
+                        <p className="text-xl font-bold text-primary">
+                            ${player.price.toLocaleString()}
+                        </p>
+                    </div>
+
+                    <button className="btn btn-primary px-6">
+                        Choose Player
                     </button>
+
                 </div>
+
             </div>
         </div>
     );

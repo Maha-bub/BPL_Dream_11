@@ -9,7 +9,7 @@ const AvailablePlayers = ({ playerData }: PlayerProps) => {
     console.log(playerData)
     return (
         <div>
-            <div>
+            <div className="grid grid-cols-3 gap-7">
                 {playerData.map((player => {
                     return <PlayerCard player={player}></PlayerCard>
                 }))}
