@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { use, useState, type ActionDispatch, type Dispatch } from "react";
 import type { IplayerType } from "../PlayersType";
 import AvailablePlayers from "../AvailablePlayers";
 import SelectedPlayers from "../SelectedPlayers";
@@ -6,9 +6,11 @@ import SelectedPlayers from "../SelectedPlayers";
 
 interface PlayerProps {
     PlayerDataPromise: Promise<IplayerType[]>
+    total: number,
+    setTotal: Dispatch<SetStateAction<number>>
 }
 
-const Players = ({ PlayerDataPromise }: PlayerProps) => {
+const Players = ({ PlayerDataPromise, total, setTotal }: PlayerProps) => {
     const playerData = use(PlayerDataPromise);
     // console.log(playerData)
 

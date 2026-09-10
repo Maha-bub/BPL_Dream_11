@@ -1,6 +1,9 @@
 import { HiCurrencyDollar } from 'react-icons/hi';
 import Logo from '../assets/logo.png'
-const Header = () => {
+interface ITotal {
+    total: number
+}
+const Header = ({ total }: ITotal) => {
     return (
         <>
             <nav className='bg-fuchsia-300'>
@@ -13,7 +16,7 @@ const Header = () => {
                         <li><a href="/schedule">Schedule</a></li>
                         <div className='flex text-xl ml-4 items-center-safe justify-center'>
                             <HiCurrencyDollar className="tex-slate-300" />
-                            <strong className='bold text-black ml-2'>500</strong>
+                            <strong className='bold text-black ml-2'>{total}</strong>
                         </div>
                     </ul>
                 </div>

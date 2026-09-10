@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Banner from "./components/Banner";
 import Header from "./components/Header";
 import Players from "./components/Players/Players";
@@ -10,13 +10,20 @@ const PlayerDataPromise = async (): Promise<IplayerType> => {
   return data;
 }
 function App() {
+  const [total, setTotal] = useState(5000);
 
   return (
     <>
-      <Header></Header>
+      <Header total={total}></Header>
       <Banner></Banner>
       <Suspense fallback={<p>Loading....</p>}>
-        <Players PlayerDataPromise={PlayerDataPromise()}></Players>
+        <Players
+          total={total}
+          setTotal={setTotal}
+          PlayerDataPromise={PlayerDataPromise()
+
+
+          }></Players>
       </Suspense>
     </>
   )
