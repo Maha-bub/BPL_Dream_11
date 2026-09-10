@@ -1,6 +1,7 @@
-import { use } from "react";
+import { use, useState } from "react";
 import type { IplayerType } from "../PlayersType";
 import AvailablePlayers from "../AvailablePlayers";
+import SelectedPlayers from "../SelectedPlayers";
 
 
 interface PlayerProps {
@@ -11,6 +12,13 @@ const Players = ({ PlayerDataPromise }: PlayerProps) => {
     const playerData = use(PlayerDataPromise);
     // console.log(playerData)
 
+
+    const [buttonType, setButtonType] = useState('Available');
+
+    const handleButtonType = (type: 'Available' | 'Selected') => {
+        setButtonType(type)
+    }
+
     return (
         <div className="bg-base-200 min-h-screen py-8">
             <div className="container mx-auto max-w-7xl px-4 space-y-8">
@@ -20,28 +28,35 @@ const Players = ({ PlayerDataPromise }: PlayerProps) => {
 
 
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-                        Available Players
+                        {buttonType === 'Available' ? "Available Players" : "Seletcted Players"}
                     </h2>
 
 
 
                     {/* Buttons */}
                     <div className="flex items-center">
-                        <button className="btn btn-success rounded-r-none btn-sm sm:btn-md">
+                        <button
+                            onClick={() => handleButtonType("Available")}
+                            className={`btn ${buttonType === 'Available' ? "btn-success" : ""} rounded-r-none btn-sm sm:btn-md`}>
                             Available
                         </button>
 
-                        <button className="btn rounded-l-none btn-sm sm:btn-md">
+                        <button
+                            onClick={() => handleButtonType("Selected")}
+                            className={`btn ${buttonType === 'Selected' ? "btn-success" : ""}  rounded-r-none btn-sm sm:btn-md`}
+                        >
                             Selected
                         </button>
                     </div>
                 </div>
 
                 {/* Players */}
-                <AvailablePlayers playerData={playerData} />
+                {
+                    buttonType === 'Available' ? <AvailablePlayers playerData={playerData} /> : <SelectedPlayers></SelectedPlayers>
+                }
 
             </div>
-        </div>
+        </div >
     );
 };
 
