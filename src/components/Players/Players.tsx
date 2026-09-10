@@ -1,14 +1,14 @@
-import { use, useState, type ActionDispatch, type Dispatch } from "react";
+import { use, useState, type ActionDispatch, type Dispatch, type SetStateAction } from "react";
 import type { IplayerType } from "../PlayersType";
 import AvailablePlayers from "../AvailablePlayers";
 import SelectedPlayers from "../SelectedPlayers";
 
 
 interface PlayerProps {
-    PlayerDataPromise: Promise<IplayerType[]>
+    PlayerDataPromise: Promise<IplayerType[]>,
     total: number,
     setTotal: Dispatch<SetStateAction<number>>
-}
+};
 
 const Players = ({ PlayerDataPromise, total, setTotal }: PlayerProps) => {
     const playerData = use(PlayerDataPromise);
@@ -54,7 +54,7 @@ const Players = ({ PlayerDataPromise, total, setTotal }: PlayerProps) => {
 
                 {/* Players */}
                 {
-                    buttonType === 'Available' ? <AvailablePlayers playerData={playerData} /> : <SelectedPlayers></SelectedPlayers>
+                    buttonType === 'Available' ? <AvailablePlayers total={total} setTotal={setTotal} playerData={playerData} /> : <SelectedPlayers></SelectedPlayers>
                 }
 
             </div>

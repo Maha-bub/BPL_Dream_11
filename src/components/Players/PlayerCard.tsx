@@ -1,15 +1,23 @@
 import { FaUserPlus } from "react-icons/fa";
 import type { IplayerType } from "../PlayersType";
 import { IoFlagSharp } from "react-icons/io5";
-import { useState } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 export interface PlayerCardProps {
-    player: Promise<IplayerType>
+    player: Promise<IplayerType>,
+    total: number,
+    setTotal: Dispatch<SetStateAction<number>>
 }
 
-const PlayerCard = ({ player }: PlayerCardProps) => {
-    console.log(player);
+const PlayerCard = ({ player, total, setTotal }: PlayerCardProps) => {
+    console.log(total, setTotal)
+    // console.log(player);
 
     const [isSelected, setIsSelected] = useState(false);
+    const handlePlayerButtons = () => {
+        setIsSelected(true);
+        let totalCoin = total - (player.price)
+        setTotal(totalCoin);
+    }
 
     return (
         <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 border border-base-200 overflow-hidden">
@@ -90,7 +98,7 @@ const PlayerCard = ({ player }: PlayerCardProps) => {
                     </div>
 
                     <button
-                        onClick={() => setIsSelected(true)}
+                        onClick={() => handlePlayerButtons()}
                         className={`btn btn-primary px-6                    
                         `}
                         disabled={isSelected}>

@@ -6,7 +6,7 @@ interface ITotal {
 const Header = ({ total }: ITotal) => {
     return (
         <>
-            <nav className='bg-fuchsia-300'>
+            <nav className=' sticky bg-fuchsia-300'>
                 <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
                     <img src={Logo} alt="Logo" />
                     <ul className="flex gap-4 text-black items-center">
