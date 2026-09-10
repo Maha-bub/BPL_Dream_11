@@ -17,7 +17,7 @@ const PlayerCard = ({ player, total, setTotal }: PlayerCardProps) => {
     const handlePlayerButtons = () => {
         setIsSelected(true);
         let totalCoin = total - (player.price)
-        { totalCoin >= 0 ? setTotal(totalCoin) : toast.warning("Balance is not enough for purchace!") }
+        { totalCoin >= 0 ? setTotal(totalCoin) : toast.error("Balance is not enough for purchace!") }
     }
 
     return (
