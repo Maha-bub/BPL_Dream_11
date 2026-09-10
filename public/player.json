@@ -56,7 +56,7 @@
         "playerType": "Bowler",
         "battingStyle": "Right Handed",
         "bowlingStyle": "Right Arm Leg Break",
-        "price": 400,
+        "price": 1980,
         "rating": 9.3
     },
     {
@@ -66,7 +66,7 @@
         "playerType": "Batsman",
         "battingStyle": "Right Handed",
         "bowlingStyle": "Right Arm Off Break",
-        "price": 125,
+        "price": 1125,
         "rating": 9.2
     },
     {
@@ -76,7 +76,7 @@
         "playerType": "Bowler",
         "battingStyle": "Left Handed",
         "bowlingStyle": "Left Arm Fast Medium",
-        "price": 100,
+        "price": 1100,
         "rating": 9.1
     },
     {
