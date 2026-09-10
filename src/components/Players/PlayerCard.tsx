@@ -1,12 +1,15 @@
 import { FaUserPlus } from "react-icons/fa";
 import type { IplayerType } from "../PlayersType";
 import { IoFlagSharp } from "react-icons/io5";
+import { useState } from "react";
 export interface PlayerCardProps {
     player: Promise<IplayerType>
 }
 
 const PlayerCard = ({ player }: PlayerCardProps) => {
     console.log(player);
+
+    const [isSelected, setIsSelected] = useState(false);
 
     return (
         <div className="card bg-base-100 shadow-md hover:shadow-xl transition-all duration-300 border border-base-200 overflow-hidden">
@@ -38,30 +41,21 @@ const PlayerCard = ({ player }: PlayerCardProps) => {
                         <span>{player.origin}</span>
                     </div>
 
-                    <span className="badge badge-outline">
-                        {player.playerType}
-                    </span>
+                    <span className="badge badge-outline">                        {player.playerType}                    </span>
                 </div>
 
                 <div className="divider my-2"></div>
 
                 {/* Player Information */}
                 <div className="space-y-3 text-sm">
-
                     <div className="flex justify-between">
-                        <span className="text-gray-500">
-                            Rating
-                        </span>
+                        <span className="text-gray-500">                            Rating                        </span>
 
-                        <span className="font-semibold">
-                            ⭐ {player.rating}
-                        </span>
+                        <span className="font-semibold">                            ⭐ {player.rating}                        </span>
                     </div>
 
                     <div className="flex justify-between">
-                        <span className="text-gray-500">
-                            Batting Style
-                        </span>
+                        <span className="text-gray-500">                            Batting Style                        </span>
 
                         <span className="font-medium text-right">
                             {player.battingStyle}
@@ -95,8 +89,17 @@ const PlayerCard = ({ player }: PlayerCardProps) => {
                         </p>
                     </div>
 
-                    <button className="btn btn-primary px-6">
-                        Choose Player
+                    <button
+                        onClick={() => setIsSelected(true)}
+                        className={`btn btn-primary px-6                    
+                        `}
+                        disabled={isSelected}>
+                        {/* disabled={isSelected  === true ? true : false}> */}
+
+
+                        {
+                            isSelected ? "Selected" : "Choose Player"
+                        }
                     </button>
 
                 </div>
