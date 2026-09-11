@@ -12,7 +12,7 @@ export interface PlayerCardProps {
 }
 
 const PlayerCard = ({ player, total, setTotal, selectedPlayers, setSelectedPlayers }: PlayerCardProps) => {
-    console.log(total, setTotal)
+    // console.log(total, setTotal)
     // console.log(player);
 
     const [isSelected, setIsSelected] = useState(false);
@@ -21,6 +21,8 @@ const PlayerCard = ({ player, total, setTotal, selectedPlayers, setSelectedPlaye
         toast.success(`${player.playerName} purchased successfully done!`)
         let totalCoin = total - (player.price)
         { totalCoin >= 0 ? setTotal(totalCoin) : toast.error(` Balance is not enough for purchased!`) }
+
+        setSelectedPlayers([...selectedPlayers,player])
     }
 
     return (

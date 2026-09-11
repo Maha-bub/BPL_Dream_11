@@ -6,9 +6,10 @@ interface seltectedProps {
     setSelectedPlayers: Dispatch<SetStateAction<IplayerType[]>>
 }
 const SelectedPlayers = ({ selectedPlayers, setSelectedPlayers }: seltectedProps) => {
+    console.log(SelectedPlayers)
     return (
         <div>
-            Selected Players!
+console.log(selectedPlayers)
         </div>
     );
 };

@@ -15,7 +15,7 @@ const AvailablePlayers = ({ playerData, total, setTotal, selectedPlayers, setSel
         <div>
             <div className="grid grid-cols-3 gap-7">
                 {playerData.map((player => {
-                    return <PlayerCard total={total} setTotal={setTotal} player={player} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers}></PlayerCard>
+                    return <PlayerCard key={player.playerName} total={total} setTotal={setTotal} player={player} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers}></PlayerCard>
                 }))}
             </div>
         </div>
