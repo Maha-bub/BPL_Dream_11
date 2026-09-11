@@ -4,7 +4,7 @@ import { IoFlagSharp } from "react-icons/io5";
 import { useState, type Dispatch, type SetStateAction } from "react";
 import { toast } from "react-toastify";
 export interface PlayerCardProps {
-    player: Promise<IplayerType>,
+    player: IplayerType,
     total: number,
     setTotal: Dispatch<SetStateAction<number>>
 }
@@ -16,8 +16,9 @@ const PlayerCard = ({ player, total, setTotal }: PlayerCardProps) => {
     const [isSelected, setIsSelected] = useState(false);
     const handlePlayerButtons = () => {
         setIsSelected(true);
+        toast.success(`${player.playerName} purchased successfully done!`)
         let totalCoin = total - (player.price)
-        { totalCoin >= 0 ? setTotal(totalCoin) : toast.error(` Balance is not enough for purchace!`) }
+        { totalCoin >= 0 ? setTotal(totalCoin) : toast.error(` Balance is not enough for purchased!`) }
     }
 
     return (
