@@ -6,15 +6,16 @@ import type { IplayerType } from "./PlayersType";
 interface PlayerProps {
     playerData: IplayerType,
     total: number,
-    setTotal: Dispatch<SetStateAction<number>>
+    setTotal: Dispatch<SetStateAction<number>>,
+    
 }
-const AvailablePlayers = ({ playerData, total, setTotal }: PlayerProps) => {
+const AvailablePlayers = ({ playerData, total, setTotal, selectedPlayers, setSelectedPlayers }: PlayerProps) => {
     console.log(playerData)
     return (
         <div>
             <div className="grid grid-cols-3 gap-7">
                 {playerData.map((player => {
-                    return <PlayerCard total={total} setTotal={setTotal} player={player}></PlayerCard>
+                    return <PlayerCard total={total} setTotal={setTotal} player={player} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers}></PlayerCard>
                 }))}
             </div>
         </div>

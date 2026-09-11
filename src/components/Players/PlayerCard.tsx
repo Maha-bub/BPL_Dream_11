@@ -7,9 +7,11 @@ export interface PlayerCardProps {
     player: IplayerType,
     total: number,
     setTotal: Dispatch<SetStateAction<number>>
+    selectedPlayers: IplayerType[],
+    setSelectedPlayers: Dispatch<SetStateAction<IplayerType[]>>
 }
 
-const PlayerCard = ({ player, total, setTotal }: PlayerCardProps) => {
+const PlayerCard = ({ player, total, setTotal, selectedPlayers, setSelectedPlayers }: PlayerCardProps) => {
     console.log(total, setTotal)
     // console.log(player);
 

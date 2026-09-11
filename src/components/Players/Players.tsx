@@ -15,11 +15,13 @@ const Players = ({ PlayerDataPromise, total, setTotal }: PlayerProps) => {
     // console.log(playerData)
 
 
-    const [buttonType, setButtonType] = useState('Available');
+    const [buttonType, setButtonType] = useState<'Available' | 'Selected'>('Available');
 
     const handleButtonType = (type: 'Available' | 'Selected') => {
         setButtonType(type)
     }
+
+    const [selectedPlayers, setSelectedPlayers] = useState<IplayerType>([]);
 
     return (
         <div className="bg-base-200 min-h-screen py-8">
@@ -54,7 +56,7 @@ const Players = ({ PlayerDataPromise, total, setTotal }: PlayerProps) => {
 
                 {/* Players */}
                 {
-                    buttonType === 'Available' ? <AvailablePlayers total={total} setTotal={setTotal} playerData={playerData} /> : <SelectedPlayers></SelectedPlayers>
+                    buttonType === 'Available' ? <AvailablePlayers total={total} setTotal={setTotal} playerData={playerData} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} /> : <SelectedPlayers  selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} ></SelectedPlayers>
                 }
 
             </div>
