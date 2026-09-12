@@ -16,17 +16,23 @@ const SelectedPlayers = ({
     setTotal
 }: SelectedProps) => {
 
-  const handleRemovePlayer = (player: IplayerType) => {
+    const handleRemovePlayer = (player: IplayerType) => {
 
-    const updateSelectedPlayers = selectedPlayers.filter(
-        selectedPlayer =>
-            selectedPlayer.playerName !== player.playerName
-    );
+        const updateSelectedPlayers = selectedPlayers.filter(
+            selectedPlayer =>
+                selectedPlayer.playerName !== player.playerName
+        );
 
-    setSelectedPlayers(updateSelectedPlayers);
+        setSelectedPlayers(updateSelectedPlayers);
 
-    setTotal(total + player.price);
-};
+        setTotal(total + player.price);
+    };
+
+    if (selectedPlayers.length === 0) {
+        return (
+            <h3 className="font-semibold text-center text-red-400 my-10">No selected players</h3>
+        )
+    }
 
     return (
         <div className="space-y-3">
