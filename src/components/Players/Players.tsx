@@ -56,7 +56,7 @@ const Players = ({ PlayerDataPromise, total, setTotal }: PlayerProps) => {
 
                 {/* Players */}
                 {
-                    buttonType === 'Available' ? <AvailablePlayers total={total} setTotal={setTotal} playerData={playerData} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} /> : <SelectedPlayers  selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} ></SelectedPlayers>
+                    buttonType === 'Available' ? <AvailablePlayers total={total} setTotal={setTotal} playerData={playerData} selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} /> : <SelectedPlayers selectedPlayers={selectedPlayers} setSelectedPlayers={setSelectedPlayers} total={total} setTotal={setTotal}></SelectedPlayers>
                 }
 
             </div>

@@ -5,20 +5,28 @@ import { TbTrash } from "react-icons/tb";
 interface SelectedProps {
     selectedPlayers: IplayerType[];
     setSelectedPlayers: Dispatch<SetStateAction<IplayerType[]>>;
+    total: number,
+    setTotal: Dispatch<SetStateAction<number>>
 }
 
 const SelectedPlayers = ({
     selectedPlayers,
     setSelectedPlayers,
+    total,
+    setTotal
 }: SelectedProps) => {
 
-    const handleRemovePlayer = (playerName: string) => {
-        setSelectedPlayers(
-            selectedPlayers.filter(
-                player => player.playerName !== playerName
-            )
-        );
-    };
+  const handleRemovePlayer = (player: IplayerType) => {
+
+    const updateSelectedPlayers = selectedPlayers.filter(
+        selectedPlayer =>
+            selectedPlayer.playerName !== player.playerName
+    );
+
+    setSelectedPlayers(updateSelectedPlayers);
+
+    setTotal(total + player.price);
+};
 
     return (
         <div className="space-y-3">
@@ -52,7 +60,7 @@ const SelectedPlayers = ({
 
                     {/* Delete Button */}
                     <button
-                        onClick={() => handleRemovePlayer(player.playerName)}
+                        onClick={() => handleRemovePlayer(player)}
                         className="btn btn-ghost btn-sm text-red-500 hover:bg-red-50 hover:text-red-600"
                     >
                         <TbTrash size={20} />
